@@ -4,6 +4,7 @@ import "./globals.css"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
+import { Providers } from "@/components/providers"
 
 const inter = Inter({
   variable:  "--font-inter-var",
@@ -30,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen flex flex-col antialiased">
         <Navbar />
         <main className="flex-1">
-          {children}
+          <Providers>{children}</Providers>
         </main>
         <Footer />
         <WhatsAppFloat />

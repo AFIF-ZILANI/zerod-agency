@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import { Inter, Hind_Siliguri } from "next/font/google"
 import "./globals.css"
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
+import { WhatsAppFloat } from "@/components/whatsapp-float"
 
 const inter = Inter({
   variable:  "--font-inter-var",
@@ -25,7 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${hindSiliguri.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
-        {children}
+        <Navbar />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   )

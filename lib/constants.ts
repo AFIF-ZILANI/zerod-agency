@@ -1,5 +1,6 @@
 export const WHATSAPP_NUMBER = "880XXXXXXXXXX"
 export const WHATSAPP_URL    = `https://wa.me/${WHATSAPP_NUMBER}`
+export const WHATSAPP_MSG    = "আমি ZeroD Agency-র সাথে কথা বলতে চাই।"
 
 export function wa(message: string): string {
   return `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`

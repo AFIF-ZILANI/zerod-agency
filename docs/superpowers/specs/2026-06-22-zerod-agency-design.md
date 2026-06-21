@@ -116,7 +116,19 @@ const hindSiliguri = Hind_Siliguri({ subsets: ["bengali"], weight: ["400","600",
   - Two CTAs stacked on mobile, side-by-side on desktop:
     - Primary: `WhatsApp করুন 💬` → gold button, `wa.me` link
     - Secondary: `আমাদের কাজ দেখুন →` → outlined white button, links to `/portfolio`
-- **Decoration:** subtle radial gradient overlay, no heavy animations
+
+#### Hero Animations (CSS only — no Framer Motion)
+All animations use CSS keyframes defined in `globals.css`. No extra dependencies — `tw-animate-css` already installed.
+
+1. **Staggered fade-up entrance** — each hero element fades in from `translateY(20px)` to `translateY(0)` + `opacity 0→1`, with `animation-delay` staggered 150ms per element in this order: logo → Bengali headline → English subtext → CTA buttons. Duration: 600ms ease-out per element.
+
+2. **Breathing background gradient** — a radial glow (`rgba(245,158,11,0.08)` gold tint) centered behind the headline, animates `opacity 0.5→1→0.5` on an 8s infinite loop. Implemented as an absolutely-positioned `::before` pseudo-element on the hero section.
+
+3. **Floating decorative ring** — large circle (400px × 400px) rendered as a CSS `border` ring (`border: 1.5px solid rgba(245,158,11,0.15)`), positioned bottom-right of the hero, animates `translateY(0) → translateY(-20px) → translateY(0)` on a 12s infinite ease-in-out loop. Purely decorative, `pointer-events: none`, `aria-hidden`.
+
+4. **WhatsApp CTA pulse glow** — the gold primary button has a repeating `box-shadow` pulse animation (`0 0 0 0 rgba(245,158,11,0.6)` → `0 0 0 12px rgba(245,158,11,0)`) on a 2.5s infinite loop, drawing the eye to the primary action without being distracting.
+
+**Performance note:** All four are CSS `@keyframes` — GPU-composited (`transform` + `opacity` only for 1, 3, 4). The breathing gradient uses `opacity` only. Zero JS execution on the animation path.
 
 #### 3 Service Cards
 - **Background:** `#FAFAFA`
@@ -338,7 +350,7 @@ components/
 | Bengali font | Hind Siliguri via `next/font/google` | Best readability for BD mobile |
 | Icons | lucide-react | Already a dependency |
 | Form | Next.js Server Actions | No extra library needed for v1 |
-| Animations | None (v1) | BD mobile users on slower connections; add later if needed |
+| Animations | CSS keyframes only | Hero section: staggered fade-up, breathing gradient, floating ring, CTA pulse. GPU-composited (transform + opacity), no JS. `tw-animate-css` already installed. |
 | Dark mode | Not in v1 | Skip for now |
 | Image optimization | Next.js `<Image>` | Built-in, important for mobile perf |
 | Portfolio images | Colored placeholder divs (CSS) | No real screenshots yet; replace later |

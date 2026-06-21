@@ -1,0 +1,107 @@
+{
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/.claude/settings.local.json": {
+    "mtime": 1782068329.6685839,
+    "ast_hash": "cca58af8ba28eb68891a62516f3d9da0",
+    "semantic_hash": "cca58af8ba28eb68891a62516f3d9da0"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/app/layout.tsx": {
+    "mtime": 1782067137.3386216,
+    "ast_hash": "94c34ef68b3949a75807a0211ec2273c",
+    "semantic_hash": "94c34ef68b3949a75807a0211ec2273c"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/app/page.tsx": {
+    "mtime": 1782067137.338621,
+    "ast_hash": "1e489b26bb597dc97f8d44954dd042da",
+    "semantic_hash": "1e489b26bb597dc97f8d44954dd042da"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/components.json": {
+    "mtime": 1782067264.2324238,
+    "ast_hash": "a0238eb4ceb9341a82b6e3640ca96743",
+    "semantic_hash": "a0238eb4ceb9341a82b6e3640ca96743"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/components/ui/button.tsx": {
+    "mtime": 1782067265.6296532,
+    "ast_hash": "37ff09090166aa7d6fae96e0b081e492",
+    "semantic_hash": "37ff09090166aa7d6fae96e0b081e492"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/eslint.config.mjs": {
+    "mtime": 1782067137.3377137,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/lib/utils.ts": {
+    "mtime": 1782067265.6990333,
+    "ast_hash": "5a6fd53fdcf2be529e9cc0b718fde352",
+    "semantic_hash": "5a6fd53fdcf2be529e9cc0b718fde352"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/next.config.ts": {
+    "mtime": 1782067137.3382032,
+    "ast_hash": "9b77af189a21a7a64e4bd7a426f64176",
+    "semantic_hash": "9b77af189a21a7a64e4bd7a426f64176"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/package.json": {
+    "mtime": 1782067264.9524844,
+    "ast_hash": "bca2c591db636a157a470b8dfa0cfede",
+    "semantic_hash": "bca2c591db636a157a470b8dfa0cfede"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/postcss.config.mjs": {
+    "mtime": 1782067137.3382277,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/tsconfig.json": {
+    "mtime": 1782067137.342287,
+    "ast_hash": "02fc19ad21338c2ab820a70136310db4",
+    "semantic_hash": "02fc19ad21338c2ab820a70136310db4"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/AGENTS.md": {
+    "mtime": 1782067156.8161764,
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": "9e09241799026ac05be315a2f0b50055"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/CLAUDE.md": {
+    "mtime": 1782067156.816324,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/README.md": {
+    "mtime": 1782068596.8707707,
+    "ast_hash": "7acb8449f0d4fd0d0a348b535a29e62d",
+    "semantic_hash": "7acb8449f0d4fd0d0a348b535a29e62d"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/docs/superpowers/plans/2026-06-22-zerod-agency-website.md": {
+    "mtime": 1782069171.2917888,
+    "ast_hash": "031b070cc45260d19c290071a40be593",
+    "semantic_hash": "031b070cc45260d19c290071a40be593"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/docs/superpowers/specs/2026-06-22-zerod-agency-design.md": {
+    "mtime": 1782068520.198819,
+    "ast_hash": "2e7099de5eb4e4d1156e8ecb1174a359",
+    "semantic_hash": "2e7099de5eb4e4d1156e8ecb1174a359"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/public/file.svg": {
+    "mtime": 1782067137.3377495,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/public/globe.svg": {
+    "mtime": 1782067137.339451,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/public/next.svg": {
+    "mtime": 1782067137.3392956,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/public/vercel.svg": {
+    "mtime": 1782067137.3394477,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "/Users/afifzilani/code/zerod-agency/projects/zerod-agency/public/window.svg": {
+    "mtime": 1782067137.3394105,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": "a2760511c65806022ad20adf74370ff3"
+  }
+}

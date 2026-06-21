@@ -1,0 +1,108 @@
+import { Check, MessageCircle } from "lucide-react"
+import { WA_GENERAL } from "@/lib/constants"
+
+const TIERS = [
+  {
+    nameEn:   "Starter",
+    nameBn:   "স্টার্টার",
+    price:    "৳15,000 – ৳25,000",
+    tagline:  "শুরু করার জন্য সেরা",
+    features: [
+      "5 পেজ পর্যন্ত",
+      "Contact form",
+      "Basic SEO setup",
+      "Mobile responsive",
+      "WhatsApp integration",
+      "1 মাস support",
+    ],
+    featured: false,
+    cta:      "শুরু করুন",
+  },
+  {
+    nameEn:   "Business",
+    nameBn:   "বিজনেস",
+    price:    "৳30,000 – ৳60,000",
+    tagline:  "সবচেয়ে জনপ্রিয়",
+    features: [
+      "10 পেজ পর্যন্ত",
+      "CMS integration",
+      "WhatsApp order system",
+      "Full SEO setup",
+      "Google Analytics",
+      "3 মাস support",
+    ],
+    featured: true,
+    cta:      "আলোচনা করুন",
+  },
+  {
+    nameEn:   "Custom",
+    nameBn:   "কাস্টম",
+    price:    "৳70,000+",
+    tagline:  "সম্পূর্ণ সমাধান",
+    features: [
+      "Ecommerce + payment",
+      "Booking system",
+      "Custom features",
+      "Advanced SEO",
+      "Priority support",
+      "6 মাস support",
+    ],
+    featured: false,
+    cta:      "কথা বলুন",
+  },
+]
+
+export function PricingSection() {
+  return (
+    <section className="bg-white py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 className="mb-4 text-center text-3xl font-bold text-navy">প্যাকেজ ও মূল্য</h2>
+        <p className="mb-12 text-center text-text-muted">
+          সব প্যাকেজে mobile-responsive design এবং free domain consultation অন্তর্ভুক্ত।
+        </p>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {TIERS.map((tier) => (
+            <div
+              key={tier.nameEn}
+              className={`relative flex flex-col rounded-xl border p-7 ${
+                tier.featured
+                  ? "border-2 border-orange shadow-xl shadow-orange/10"
+                  : "border-border"
+              }`}
+            >
+              {tier.featured && (
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-orange px-4 py-1 text-xs font-bold text-white">
+                  সবচেয়ে জনপ্রিয়
+                </div>
+              )}
+              <p lang="bn" className="font-bengali text-lg font-bold text-navy">{tier.nameBn}</p>
+              <p lang="bn" className="font-bengali mt-0.5 text-xs text-text-muted">{tier.tagline}</p>
+              <p className="mt-4 text-2xl font-bold text-navy">{tier.price}</p>
+              <ul className="mt-6 flex flex-col gap-2.5">
+                {tier.features.map((f) => (
+                  <li key={f} className="flex items-center gap-2.5 text-sm text-text-primary">
+                    <Check className="h-4 w-4 shrink-0 text-orange" />
+                    <span lang="bn" className="font-bengali">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={WA_GENERAL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`mt-8 flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all ${
+                  tier.featured
+                    ? "bg-orange text-white hover:bg-[#EA6C0A]"
+                    : "border border-navy text-navy hover:bg-navy hover:text-white"
+                }`}
+              >
+                <MessageCircle className="h-4 w-4" />
+                <span lang="bn" className="font-bengali">{tier.cta}</span>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

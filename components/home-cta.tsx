@@ -1,6 +1,6 @@
 "use client"
 import { MessageCircle } from "lucide-react"
-import { WA_GENERAL }    from "@/lib/constants"
+import { wa }            from "@/lib/constants"
 import { useLanguage }   from "@/lib/i18n"
 
 export function HomeCTA() {
@@ -20,7 +20,7 @@ export function HomeCTA() {
         {t("home.cta.sub")}
       </p>
       <a
-        href={WA_GENERAL}
+        href={wa(t("wa.general"))}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-8 inline-flex items-center gap-2 rounded-lg bg-orange px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-hover"

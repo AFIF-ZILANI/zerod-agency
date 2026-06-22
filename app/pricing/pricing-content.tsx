@@ -1,6 +1,6 @@
 "use client"
 import { Check, X, MessageCircle } from "lucide-react"
-import { WA_GENERAL } from "@/lib/constants"
+import { wa } from "@/lib/constants"
 import { useLanguage } from "@/lib/i18n"
 import { SectionHeading } from "@/components/section-heading"
 
@@ -75,7 +75,7 @@ export function PricingContent() {
                   {PLANS.map((plan, i) => (
                     <td key={i} className="pt-8 text-center">
                       <a
-                        href={WA_GENERAL}
+                        href={wa(t("wa.general"))}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`inline-flex items-center gap-1.5 rounded-lg px-5 py-2.5 text-sm font-semibold transition-colors ${

@@ -2,7 +2,7 @@
 import { motion, type Variants, useReducedMotion } from "framer-motion"
 import Link                  from "next/link"
 import { MessageCircle, ArrowRight } from "lucide-react"
-import { WA_GENERAL }        from "@/lib/constants"
+import { wa }                from "@/lib/constants"
 import { useLanguage }       from "@/lib/i18n"
 
 const fadeUp: Variants = {
@@ -74,7 +74,7 @@ export function Hero() {
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <a
-            href={WA_GENERAL}
+            href={wa(t("wa.general"))}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg bg-orange px-7 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-orange-hover hover:shadow-orange/30 hover:shadow-xl"

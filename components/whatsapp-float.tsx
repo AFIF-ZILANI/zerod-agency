@@ -1,10 +1,13 @@
+"use client"
 import { MessageCircle } from "lucide-react"
-import { WA_GENERAL } from "@/lib/constants"
+import { wa } from "@/lib/constants"
+import { useLanguage } from "@/lib/i18n"
 
 export function WhatsAppFloat() {
+  const { t } = useLanguage()
   return (
     <a
-      href={WA_GENERAL}
+      href={wa(t("wa.general"))}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

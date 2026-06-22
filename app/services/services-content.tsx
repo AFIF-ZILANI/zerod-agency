@@ -1,7 +1,7 @@
 "use client"
 import Link        from "next/link"
 import { Globe, RefreshCw, Wrench, ArrowRight, MessageCircle } from "lucide-react"
-import { WA_GENERAL } from "@/lib/constants"
+import { wa } from "@/lib/constants"
 import { useLanguage } from "@/lib/i18n"
 
 const SERVICES = [
@@ -45,7 +45,7 @@ export function ServicesContent() {
         <h2 lang={language} className={`${fontClass} text-2xl font-bold text-white`}>{t("svcp.cta.heading")}</h2>
         <p lang={language} className={`${fontClass} mt-3 text-white/70`}>{t("svcp.cta.sub")}</p>
         <a
-          href={WA_GENERAL}
+          href={wa(t("wa.general"))}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-lg bg-orange px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-hover"

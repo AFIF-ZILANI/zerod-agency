@@ -119,6 +119,17 @@ export const translations: Record<Language, TranslationMap> = {
     "maint.sub":               "আপনি ব্যবসায় মনোযোগ দিন, website-এর দায়িত্ব আমাদের",
     "maint.start":             "শুরু করুন",
 
+    // Pricing page
+    "pricing.page_heading":    "মূল্য তালিকা",
+    "pricing.page_subtitle":   "Transparent Pricing",
+    "pricing.faq_heading":     "সাধারণ প্রশ্ন",
+    "pricing.start":           "শুরু করুন",
+
+    // Contact info labels
+    "contact.phone_label":     "ফোন",
+    "contact.email_label":     "ইমেইল",
+    "contact.address_label":   "ঠিকানা",
+
     // Shared
     "shared.whatsapp":         "WhatsApp করুন",
   },
@@ -238,6 +249,17 @@ export const translations: Record<Language, TranslationMap> = {
     "maint.h2":                "Stay worry-free — we'll handle it",
     "maint.sub":               "Focus on your business, we'll take care of your website",
     "maint.start":             "Get Started",
+
+    // Pricing page
+    "pricing.page_heading":    "Price List",
+    "pricing.page_subtitle":   "স্বচ্ছ মূল্য",
+    "pricing.faq_heading":     "Frequently Asked Questions",
+    "pricing.start":           "Get Started",
+
+    // Contact info labels
+    "contact.phone_label":     "Phone",
+    "contact.email_label":     "Email",
+    "contact.address_label":   "Address",
 
     // Shared
     "shared.whatsapp":         "WhatsApp Us",

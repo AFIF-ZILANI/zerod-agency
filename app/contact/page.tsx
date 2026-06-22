@@ -4,8 +4,11 @@ import { ContactInfo } from "./contact-info"
 import { PageHero }    from "@/components/page-hero"
 
 export const metadata: Metadata = {
-  title:       "Contact",
-  description: "Get in touch with ZeroD Agency. WhatsApp, email, or fill out the form for a free consultation.",
+  title:       "Contact ZeroD Agency — Web Design Agency in Naogaon, Bangladesh",
+  description: "Get in touch with ZeroD Agency — the web design agency based in Naogaon, Bangladesh. WhatsApp, email, or fill in the form for a free consultation on your website project.",
+  keywords:    ["contact web agency Bangladesh", "website design Naogaon contact", "ZeroD Agency contact", "free website consultation Bangladesh"],
+  alternates:  { canonical: "https://zerodagency.com/contact" },
+  openGraph:   { url: "https://zerodagency.com/contact", title: "Contact ZeroD Agency — Web Design Agency in Naogaon, Bangladesh" },
 }
 
 export default function ContactPage() {

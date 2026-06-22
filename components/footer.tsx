@@ -1,23 +1,26 @@
+"use client"
 import Link from "next/link"
 import { Share2, Mail, Phone, MapPin } from "lucide-react"
 import {
   SITE_NAME, TAGLINE_BN, EMAIL, PHONE, ADDRESS,
   FACEBOOK_URL, WA_GENERAL,
 } from "@/lib/constants"
+import { useLanguage } from "@/lib/i18n"
 
 const SERVICE_LINKS = [
-  { label: "Website Build",  href: "/services/website-build"  },
-  { label: "Redesign",       href: "/services/redesign"       },
-  { label: "Maintenance",    href: "/services/maintenance"    },
-  { label: "All Services",   href: "/services"                },
+  { labelKey: "services.build.title",    href: "/services/website-build"  },
+  { labelKey: "services.redesign.title", href: "/services/redesign"       },
+  { labelKey: "services.maint.title",    href: "/services/maintenance"    },
+  { labelKey: "svcp.heading",            href: "/services"                },
 ]
 const QUICK_LINKS = [
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Pricing",   href: "/pricing"   },
-  { label: "Contact",   href: "/contact"   },
+  { labelKey: "nav.portfolio", href: "/portfolio" },
+  { labelKey: "nav.pricing",   href: "/pricing"   },
+  { labelKey: "nav.contact",   href: "/contact"   },
 ]
 
 export function Footer() {
+  const { t, fontClass, language } = useLanguage()
   return (
     <footer className="bg-navy text-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
@@ -35,12 +38,14 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/40">Services</h3>
+            <h3 lang={language} className={`${fontClass} mb-4 text-xs font-semibold uppercase tracking-widest text-white/40`}>
+              {t("footer.services")}
+            </h3>
             <ul className="flex flex-col gap-2">
               {SERVICE_LINKS.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-sm text-white/70 hover:text-orange transition-colors">
-                    {l.label}
+                    <span lang={language} className={fontClass}>{t(l.labelKey)}</span>
                   </Link>
                 </li>
               ))}
@@ -49,12 +54,14 @@ export function Footer() {
 
           {/* Quick links */}
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/40">Quick Links</h3>
+            <h3 lang={language} className={`${fontClass} mb-4 text-xs font-semibold uppercase tracking-widest text-white/40`}>
+              {t("footer.quick_links")}
+            </h3>
             <ul className="flex flex-col gap-2">
               {QUICK_LINKS.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-sm text-white/70 hover:text-orange transition-colors">
-                    {l.label}
+                    <span lang={language} className={fontClass}>{t(l.labelKey)}</span>
                   </Link>
                 </li>
               ))}
@@ -63,7 +70,9 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/40">Contact</h3>
+            <h3 lang={language} className={`${fontClass} mb-4 text-xs font-semibold uppercase tracking-widest text-white/40`}>
+              {t("footer.contact_col")}
+            </h3>
             <ul className="flex flex-col gap-3 text-sm text-white/70">
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-orange" />
@@ -88,7 +97,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/30">
-          © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+          © {new Date().getFullYear()} {SITE_NAME}. {t("footer.rights")}
         </div>
       </div>
     </footer>

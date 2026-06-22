@@ -1,3 +1,7 @@
+"use client"
+import { useLanguage } from "@/lib/i18n"
+import { SectionHeading } from "@/components/section-heading"
+
 const TESTIMONIALS = [
   {
     quote:    "ZeroD Agency আমার restaurant-এর জন্য অসাধারণ website বানিয়েছে। Online order এখন অনেক বেড়ে গেছে।",
@@ -20,26 +24,25 @@ const TESTIMONIALS = [
 ]
 
 export function Testimonials() {
+  const { t } = useLanguage()
   return (
     <section className="bg-surface py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 lang="bn" className="font-bengali mb-12 text-center text-3xl font-bold text-navy">
-          আমাদের client-রা যা বলেন
-        </h2>
+        <SectionHeading textKey="testimonials.heading" className="mb-12" />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {TESTIMONIALS.map((t) => (
-            <div key={t.name} className="rounded-xl border border-border bg-white p-7">
+          {TESTIMONIALS.map((item) => (
+            <div key={item.name} className="rounded-xl border border-border bg-white p-7">
               <p className="text-3xl text-orange leading-none">&ldquo;</p>
               <p lang="bn" className="font-bengali mt-3 text-sm leading-relaxed text-text-primary">
-                {t.quote}
+                {item.quote}
               </p>
               <div className="mt-6 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy text-sm font-bold text-white">
-                  <span lang="bn" className="font-bengali">{t.initial}</span>
+                  <span lang="bn" className="font-bengali">{item.initial}</span>
                 </div>
                 <div>
-                  <p lang="bn" className="font-bengali font-semibold text-navy text-sm">{t.name}</p>
-                  <p lang="bn" className="font-bengali text-xs text-text-muted">{t.business}</p>
+                  <p lang="bn" className="font-bengali font-semibold text-navy text-sm">{item.name}</p>
+                  <p lang="bn" className="font-bengali text-xs text-text-muted">{item.business}</p>
                 </div>
               </div>
             </div>

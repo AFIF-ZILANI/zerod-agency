@@ -1,45 +1,50 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, X, MessageCircle } from "lucide-react"
-import { wa }           from "@/lib/constants"
-import { useLanguage }  from "@/lib/i18n"
-import type { Language } from "@/lib/translations"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X, MessageCircle } from "lucide-react";
+import { wa } from "@/lib/constants";
+import { useLanguage } from "@/lib/i18n";
+import type { Language } from "@/lib/translations";
+import Image from "next/image";
 
 function LanguageToggle({ className = "" }: { className?: string }) {
-  const { t, language, setLanguage } = useLanguage()
-  const next: Language = language === "bn" ? "en" : "bn"
+  const { t, language, setLanguage } = useLanguage();
+  const next: Language = language === "bn" ? "en" : "bn";
   return (
     <button
       onClick={() => setLanguage(next)}
       aria-label={t("nav.toggle_label")}
       className={`flex items-center rounded-full border border-border px-3 py-1 text-xs font-semibold text-text-primary transition-colors hover:border-navy hover:text-navy ${className}`}
     >
-      <span className={language === "bn" ? "text-orange" : "text-text-muted"}>বাং</span>
+      <span className={language === "bn" ? "text-orange" : "text-text-muted"}>
+        বাং
+      </span>
       <span className="mx-1 text-text-muted/40">|</span>
-      <span className={language === "en" ? "text-orange" : "text-text-muted"}>EN</span>
+      <span className={language === "en" ? "text-orange" : "text-text-muted"}>
+        EN
+      </span>
     </button>
-  )
+  );
 }
 
 export function Navbar() {
-  const [open,     setOpen]     = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const { t } = useLanguage()
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const NAV_LINKS = [
-    { key: "nav.services",  href: "/services"  },
+    { key: "nav.services", href: "/services" },
     { key: "nav.portfolio", href: "/portfolio" },
-    { key: "nav.pricing",   href: "/pricing"   },
-    { key: "nav.contact",   href: "/contact"   },
-  ]
+    { key: "nav.pricing", href: "/pricing" },
+    { key: "nav.contact", href: "/contact" },
+  ];
 
   return (
     <header
@@ -51,9 +56,19 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1 text-xl font-bold text-navy">
-          Zero<span className="text-orange">D</span>
-          <span className="ml-0.5 h-1.5 w-1.5 rounded-full bg-orange" />
+        <Link
+          href="/"
+          className="flex items-center gap-1 text-xl font-bold text-navy"
+        >
+          <div className="relative w-26 h-8">
+            <Image
+            src="/logo.png"
+            alt="ZeroD Agency Logo"
+            fill
+            objectFit="contain"
+            className="h-8 w-8 rounded-sm object-cover"
+          />
+          </div>
         </Link>
 
         {/* Desktop nav */}
@@ -124,5 +139,5 @@ export function Navbar() {
         </div>
       )}
     </header>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "880XXXXXXXXXX"
+export const WHATSAPP_NUMBER = "8801341570410"
 export const WHATSAPP_URL    = `https://wa.me/${WHATSAPP_NUMBER}`
 export const WHATSAPP_MSG    = "আমি ZeroD Agency-র সাথে কথা বলতে চাই।"
 
@@ -19,6 +19,6 @@ export const SITE_NAME    = "ZeroD Agency"
 export const TAGLINE_BN   = "আপনার ব্যবসাকে অনলাইনে নিয়ে আসুন"
 export const TAGLINE_EN   = "We build websites that work for Bangladeshi businesses"
 export const EMAIL        = "hello@zerodagency.com"
-export const PHONE        = "+880XXXXXXXXXX"
+export const PHONE        = "+8801341570410"
 export const ADDRESS      = "Naogaon, Rajshahi Division, Bangladesh"
 export const FACEBOOK_URL = "https://facebook.com/zerodagency"

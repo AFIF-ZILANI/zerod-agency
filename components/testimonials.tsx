@@ -1,5 +1,4 @@
 "use client"
-import { useLanguage }    from "@/lib/i18n"
 import { SectionHeading } from "@/components/section-heading"
 import { motion, useReducedMotion } from "framer-motion"
 
@@ -10,7 +9,6 @@ const TESTIMONIALS = [
 ]
 
 export function Testimonials() {
-  const { language } = useLanguage()
   const reduced = useReducedMotion()
 
   const container = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }

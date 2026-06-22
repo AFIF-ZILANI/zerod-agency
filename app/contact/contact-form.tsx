@@ -1,7 +1,7 @@
 "use client"
 import { useState, FormEvent } from "react"
 import { MessageCircle, Send, CheckCircle } from "lucide-react"
-import { WA_GENERAL } from "@/lib/constants"
+
 
 const BUSINESS_TYPES = [
   "Restaurant & Food",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { PortfolioGrid } from "./portfolio-grid"
+import { WA_GENERAL } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title:       "Portfolio",
@@ -22,7 +23,7 @@ export default function PortfolioPage() {
           আপনার জন্যও এমন একটি বানাই?
         </h2>
         <a
-          href="https://wa.me/880XXXXXXXXXX?text=আমি%20আমার%20ব্যবসার%20জন্য%20website%20বানাতে%20চাই।"
+          href={WA_GENERAL}
           target="_blank" rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-lg bg-orange px-7 py-3 text-sm font-semibold text-white hover:bg-orange-hover transition-colors"
         >

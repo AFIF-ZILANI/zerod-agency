@@ -30,7 +30,7 @@ export default function HomePage() {
           href={WA_GENERAL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center gap-2 rounded-lg bg-orange px-8 py-4 text-base font-semibold text-white transition-all hover:bg-[#EA6C0A]"
+          className="mt-8 inline-flex items-center gap-2 rounded-lg bg-orange px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-hover"
         >
           <MessageCircle className="h-5 w-5" />
           <span lang="bn" className="font-bengali">WhatsApp করুন</span>

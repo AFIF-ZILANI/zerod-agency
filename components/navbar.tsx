@@ -3,18 +3,14 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, MessageCircle } from "lucide-react"
-import { WA_GENERAL, SITE_NAME } from "@/lib/constants"
-
-const NAV_LINKS = [
-  { label: "Services",  href: "/services"  },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Pricing",   href: "/pricing"   },
-  { label: "Contact",   href: "/contact"   },
-]
+import { WA_GENERAL }   from "@/lib/constants"
+import { useLanguage }  from "@/lib/i18n"
+import type { Language } from "@/lib/translations"
 
 export function Navbar() {
   const [open,     setOpen]     = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { t, language, setLanguage } = useLanguage()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -22,10 +18,34 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  const NAV_LINKS = [
+    { key: "nav.services",  href: "/services"  },
+    { key: "nav.portfolio", href: "/portfolio" },
+    { key: "nav.pricing",   href: "/pricing"   },
+    { key: "nav.contact",   href: "/contact"   },
+  ]
+
+  function LanguageToggle({ className = "" }: { className?: string }) {
+    const next: Language = language === "bn" ? "en" : "bn"
+    return (
+      <button
+        onClick={() => setLanguage(next)}
+        aria-label={t("nav.toggle_label")}
+        className={`flex items-center rounded-full border border-border px-3 py-1 text-xs font-semibold text-text-primary transition-colors hover:border-navy hover:text-navy ${className}`}
+      >
+        <span className={language === "bn" ? "text-orange" : "text-text-muted"}>বাং</span>
+        <span className="mx-1 text-text-muted/40">|</span>
+        <span className={language === "en" ? "text-orange" : "text-text-muted"}>EN</span>
+      </button>
+    )
+  }
+
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-white transition-shadow duration-200 ${
-        scrolled ? "shadow-md" : "border-b border-border"
+      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
+        scrolled
+          ? "bg-white/90 shadow-md backdrop-blur-md"
+          : "border-b border-border bg-white"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -43,21 +63,24 @@ export function Navbar() {
               href={l.href}
               className="text-sm font-medium text-text-primary transition-colors hover:text-orange"
             >
-              {l.label}
+              {t(l.key)}
             </Link>
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <a
-          href={WA_GENERAL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-lg bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 md:flex"
-        >
-          <MessageCircle className="h-4 w-4" />
-          WhatsApp
-        </a>
+        {/* Desktop right: toggle + WhatsApp */}
+        <div className="hidden items-center gap-3 md:flex">
+          <LanguageToggle />
+          <a
+            href={WA_GENERAL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-lg bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            <MessageCircle className="h-4 w-4" />
+            {t("nav.whatsapp")}
+          </a>
+        </div>
 
         {/* Mobile toggle */}
         <button
@@ -72,7 +95,10 @@ export function Navbar() {
       {/* Mobile drawer */}
       {open && (
         <div className="border-t border-border bg-white md:hidden">
-          <nav className="flex flex-col gap-1 px-4 py-4">
+          <div className="px-4 pt-4 pb-2">
+            <LanguageToggle className="w-full justify-center" />
+          </div>
+          <nav className="flex flex-col gap-1 px-4 pb-4">
             {NAV_LINKS.map((l) => (
               <Link
                 key={l.href}
@@ -80,7 +106,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="rounded-md px-3 py-2.5 text-sm font-medium text-text-primary hover:bg-surface"
               >
-                {l.label}
+                {t(l.key)}
               </Link>
             ))}
             <a
@@ -91,7 +117,7 @@ export function Navbar() {
               className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white"
             >
               <MessageCircle className="h-4 w-4" />
-              WhatsApp করুন
+              {t("nav.whatsapp")}
             </a>
           </nav>
         </div>

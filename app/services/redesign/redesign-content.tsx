@@ -3,8 +3,6 @@ import { Check, MessageCircle } from "lucide-react"
 import { wa }          from "@/lib/constants"
 import { useLanguage } from "@/lib/i18n"
 
-const WA_REDESIGN = wa("আমার website redesign করতে চাই।")
-
 const FEATURES = [
   "Full visual redesign", "Mobile-first responsive layout",
   "Page speed optimization (Core Web Vitals)", "Modern UI/UX with conversion focus",
@@ -40,7 +38,7 @@ export function RedesignContent() {
         </div>
 
         <a
-          href={WA_REDESIGN}
+          href={wa(t("wa.redesign"))}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-flex items-center gap-2 rounded-lg bg-orange px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-orange-hover"

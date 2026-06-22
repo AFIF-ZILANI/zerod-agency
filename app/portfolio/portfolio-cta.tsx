@@ -1,6 +1,6 @@
 "use client"
 import { MessageCircle } from "lucide-react"
-import { WA_GENERAL }    from "@/lib/constants"
+import { wa }            from "@/lib/constants"
 import { useLanguage }   from "@/lib/i18n"
 
 export function PortfolioCTA() {
@@ -11,7 +11,7 @@ export function PortfolioCTA() {
         {t("portfolio.cta.heading")}
       </h2>
       <a
-        href={WA_GENERAL}
+        href={wa(t("wa.general"))}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-6 inline-flex items-center gap-2 rounded-lg bg-orange px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-hover"

@@ -1,6 +1,6 @@
 "use client"
 import { Check, MessageCircle } from "lucide-react"
-import { WA_GENERAL }     from "@/lib/constants"
+import { wa }             from "@/lib/constants"
 import { useLanguage }    from "@/lib/i18n"
 import { SectionHeading } from "@/components/section-heading"
 
@@ -74,7 +74,7 @@ export function PricingSection() {
                 ))}
               </ul>
               <a
-                href={WA_GENERAL}
+                href={wa(t("wa.general"))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`mt-8 flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all ${

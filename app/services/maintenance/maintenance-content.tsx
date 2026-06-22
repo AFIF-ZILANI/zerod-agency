@@ -4,8 +4,6 @@ import { wa }          from "@/lib/constants"
 import { useLanguage } from "@/lib/i18n"
 import { SectionHeading } from "@/components/section-heading"
 
-const WA_MAINTENANCE = wa("আমার website maintenance দরকার।")
-
 const PLANS = [
   { name: "Basic",    price: "৳3,000/মাস", features: ["Monthly updates", "Security monitoring", "Uptime monitoring", "Email support"] },
   { name: "Standard", price: "৳5,000/মাস", features: ["Weekly updates", "Security + malware removal", "Speed optimization", "Priority support", "Monthly report"] },
@@ -35,7 +33,7 @@ export function MaintenanceContent() {
                 ))}
               </ul>
               <a
-                href={WA_MAINTENANCE}
+                href={wa(t("wa.maintenance"))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 flex items-center justify-center gap-2 rounded-lg border border-navy py-2.5 text-sm font-semibold text-navy transition-colors hover:bg-navy hover:text-white"

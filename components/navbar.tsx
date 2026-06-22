@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, MessageCircle } from "lucide-react"
-import { WA_GENERAL }   from "@/lib/constants"
+import { wa }           from "@/lib/constants"
 import { useLanguage }  from "@/lib/i18n"
 import type { Language } from "@/lib/translations"
 
@@ -73,7 +73,7 @@ export function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <LanguageToggle />
           <a
-            href={WA_GENERAL}
+            href={wa(t("wa.general"))}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-lg bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
@@ -111,7 +111,7 @@ export function Navbar() {
               </Link>
             ))}
             <a
-              href={WA_GENERAL}
+              href={wa(t("wa.general"))}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}

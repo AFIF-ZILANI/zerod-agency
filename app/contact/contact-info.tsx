@@ -1,14 +1,14 @@
 "use client"
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react"
 import { useLanguage }  from "@/lib/i18n"
-import { WA_GENERAL, PHONE, EMAIL, ADDRESS } from "@/lib/constants"
+import { wa, PHONE, EMAIL, ADDRESS } from "@/lib/constants"
 
 export function ContactInfo() {
   const { t, fontClass, language } = useLanguage()
   return (
     <div className="flex flex-col gap-6">
       <a
-        href={WA_GENERAL}
+        href={wa(t("wa.general"))}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-5 rounded-2xl bg-[#25D366] p-6 text-white transition-opacity hover:opacity-90"

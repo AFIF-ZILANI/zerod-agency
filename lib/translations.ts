@@ -130,6 +130,11 @@ export const translations: Record<Language, TranslationMap> = {
     "contact.email_label":     "ইমেইল",
     "contact.address_label":   "ঠিকানা",
 
+    // WhatsApp pre-fill messages
+    "wa.general":              "আমি ZeroD Agency-র সাথে কথা বলতে চাই।",
+    "wa.redesign":             "আমার website redesign করতে চাই।",
+    "wa.maintenance":          "আমার website maintenance দরকার।",
+
     // Shared
     "shared.whatsapp":         "WhatsApp করুন",
   },
@@ -260,6 +265,11 @@ export const translations: Record<Language, TranslationMap> = {
     "contact.phone_label":     "Phone",
     "contact.email_label":     "Email",
     "contact.address_label":   "Address",
+
+    // WhatsApp pre-fill messages
+    "wa.general":              "I'd like to talk to ZeroD Agency.",
+    "wa.redesign":             "I'd like to redesign my website.",
+    "wa.maintenance":          "I need website maintenance.",
 
     // Shared
     "shared.whatsapp":         "WhatsApp Us",

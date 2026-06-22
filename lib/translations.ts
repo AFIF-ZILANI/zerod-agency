@@ -135,6 +135,15 @@ export const translations: Record<Language, TranslationMap> = {
     "wa.redesign":             "আমার website redesign করতে চাই।",
     "wa.maintenance":          "আমার website maintenance দরকার।",
 
+    // Legal pages
+    "legal.privacy.heading":   "গোপনীয়তা নীতি",
+    "legal.privacy.subtitle":  "Privacy Policy",
+    "legal.terms.heading":     "শর্তাবলী",
+    "legal.terms.subtitle":    "Terms & Conditions",
+    "legal.refund.heading":    "ফেরত নীতি",
+    "legal.refund.subtitle":   "Refund Policy",
+    "footer.legal":            "আইনি",
+
     // Shared
     "shared.whatsapp":         "WhatsApp করুন",
   },
@@ -270,6 +279,15 @@ export const translations: Record<Language, TranslationMap> = {
     "wa.general":              "I'd like to talk to ZeroD Agency.",
     "wa.redesign":             "I'd like to redesign my website.",
     "wa.maintenance":          "I need website maintenance.",
+
+    // Legal pages
+    "legal.privacy.heading":   "Privacy Policy",
+    "legal.privacy.subtitle":  "গোপনীয়তা নীতি",
+    "legal.terms.heading":     "Terms & Conditions",
+    "legal.terms.subtitle":    "শর্তাবলী",
+    "legal.refund.heading":    "Refund Policy",
+    "legal.refund.subtitle":   "ফেরত নীতি",
+    "footer.legal":            "Legal",
 
     // Shared
     "shared.whatsapp":         "WhatsApp Us",

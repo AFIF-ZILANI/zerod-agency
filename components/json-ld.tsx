@@ -18,7 +18,7 @@ const graph = [
       "website redesign",
       "Bangladeshi business websites",
     ],
-    sameAs: ["https://facebook.com/zerodagency"],
+    sameAs: ["https://facebook.com/zerodagency", "https://github.com/zerodagencies"],
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+8801341570410",

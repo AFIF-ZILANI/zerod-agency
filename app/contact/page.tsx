@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react"
 import { ContactForm } from "./contact-form"
 import { ContactInfo } from "./contact-info"
 import { PageHero }    from "@/components/page-hero"

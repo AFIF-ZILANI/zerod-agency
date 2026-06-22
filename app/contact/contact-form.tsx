@@ -1,6 +1,6 @@
 "use client"
 import { useState, FormEvent } from "react"
-import { MessageCircle, Send, CheckCircle } from "lucide-react"
+import { Send, CheckCircle } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 
 const BUSINESS_TYPES = [

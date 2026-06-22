@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Share2, Mail, Phone, MapPin } from "lucide-react"
 import {
   SITE_NAME, TAGLINE_BN, EMAIL, PHONE, ADDRESS,
-  FACEBOOK_URL, WA_GENERAL,
+  FACEBOOK_URL,
 } from "@/lib/constants"
 import { useLanguage } from "@/lib/i18n"
 

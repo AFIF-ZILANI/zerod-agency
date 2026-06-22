@@ -7,10 +7,26 @@ import { WA_GENERAL }   from "@/lib/constants"
 import { useLanguage }  from "@/lib/i18n"
 import type { Language } from "@/lib/translations"
 
+function LanguageToggle({ className = "" }: { className?: string }) {
+  const { t, language, setLanguage } = useLanguage()
+  const next: Language = language === "bn" ? "en" : "bn"
+  return (
+    <button
+      onClick={() => setLanguage(next)}
+      aria-label={t("nav.toggle_label")}
+      className={`flex items-center rounded-full border border-border px-3 py-1 text-xs font-semibold text-text-primary transition-colors hover:border-navy hover:text-navy ${className}`}
+    >
+      <span className={language === "bn" ? "text-orange" : "text-text-muted"}>বাং</span>
+      <span className="mx-1 text-text-muted/40">|</span>
+      <span className={language === "en" ? "text-orange" : "text-text-muted"}>EN</span>
+    </button>
+  )
+}
+
 export function Navbar() {
   const [open,     setOpen]     = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { t, language, setLanguage } = useLanguage()
+  const { t } = useLanguage()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -24,21 +40,6 @@ export function Navbar() {
     { key: "nav.pricing",   href: "/pricing"   },
     { key: "nav.contact",   href: "/contact"   },
   ]
-
-  function LanguageToggle({ className = "" }: { className?: string }) {
-    const next: Language = language === "bn" ? "en" : "bn"
-    return (
-      <button
-        onClick={() => setLanguage(next)}
-        aria-label={t("nav.toggle_label")}
-        className={`flex items-center rounded-full border border-border px-3 py-1 text-xs font-semibold text-text-primary transition-colors hover:border-navy hover:text-navy ${className}`}
-      >
-        <span className={language === "bn" ? "text-orange" : "text-text-muted"}>বাং</span>
-        <span className="mx-1 text-text-muted/40">|</span>
-        <span className={language === "en" ? "text-orange" : "text-text-muted"}>EN</span>
-      </button>
-    )
-  }
 
   return (
     <header

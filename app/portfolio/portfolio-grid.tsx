@@ -1,8 +1,6 @@
 "use client"
 import { useState }    from "react"
 import { Badge }       from "@/components/ui/badge"
-import { useLanguage } from "@/lib/i18n"
-
 const CATS = ["All", "E-commerce", "Healthcare", "Business", "Education", "Restaurant"]
 const PROJECTS = [
   { nameBn: "নওগাঁ রেস্তোরাঁ",                 descBn: "Restaurant menu + online order site",   cat: "Restaurant", icon: "🍽️", bg: "bg-orange-50"  },
@@ -15,7 +13,6 @@ const PROJECTS = [
 
 export function PortfolioGrid() {
   const [active, setActive] = useState("All")
-  const { language } = useLanguage()
   const filtered = active === "All" ? PROJECTS : PROJECTS.filter((p) => p.cat === active)
 
   return (

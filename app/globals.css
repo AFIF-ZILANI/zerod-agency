@@ -7,11 +7,13 @@
 @theme inline {
   /* Brand colors */
   --color-navy:         #0F172A;
+  --color-navy-light:   #1E2D4A;
   --color-orange:       #F97316;
   --color-orange-hover: #EA6C0A;
   --color-surface:      #F8FAFC;
+  --color-surface-alt:  #F1F5F9;
   --color-text-primary: #1E293B;
-  --color-text-muted:   #64748B;
+  --color-text-muted:   #4B5563;
 
   /* Fonts */
   --font-inter:    var(--font-inter-var);
@@ -23,7 +25,6 @@
   --color-foreground: var(--foreground);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
-
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-accent: var(--sidebar-accent);
@@ -62,7 +63,6 @@
 }
 
 :root {
-  /* Brand vars */
   --brand-navy:         #0F172A;
   --brand-orange:       #F97316;
   --brand-orange-hover: #EA6C0A;
@@ -79,7 +79,7 @@
   --secondary: #F8FAFC;
   --secondary-foreground: #1E293B;
   --muted: #F8FAFC;
-  --muted-foreground: #64748B;
+  --muted-foreground: #4B5563;
   --accent: #F97316;
   --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);

@@ -27,14 +27,14 @@ export function ContactInfo() {
 
       <div className="flex flex-col gap-5 rounded-2xl border border-border bg-white p-6">
         {[
-          { icon: Phone,  labelKey: "form.name", val: PHONE,   href: `tel:${PHONE}`,      label: "Phone"   },
-          { icon: Mail,   labelKey: "form.name", val: EMAIL,   href: `mailto:${EMAIL}`,   label: "Email"   },
-          { icon: MapPin, labelKey: "form.name", val: ADDRESS, href: undefined,            label: "Address" },
-        ].map(({ icon: Icon, label, val, href }) => (
-          <div key={label} className="flex items-start gap-4">
+          { icon: Phone,  labelKey: "contact.phone_label",   val: PHONE,   href: `tel:${PHONE}`    },
+          { icon: Mail,   labelKey: "contact.email_label",   val: EMAIL,   href: `mailto:${EMAIL}` },
+          { icon: MapPin, labelKey: "contact.address_label", val: ADDRESS, href: undefined          },
+        ].map(({ icon: Icon, labelKey, val, href }) => (
+          <div key={labelKey} className="flex items-start gap-4">
             <Icon className="mt-0.5 h-5 w-5 shrink-0 text-orange" />
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-text-muted">{label}</p>
+              <p lang={language} className={`${fontClass} text-xs font-semibold uppercase tracking-widest text-text-muted`}>{t(labelKey)}</p>
               {href ? (
                 <a href={href} className="text-sm text-text-primary transition-colors hover:text-orange">{val}</a>
               ) : (

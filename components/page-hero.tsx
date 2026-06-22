@@ -17,7 +17,7 @@ export function PageHero({ headingKey, subtitleKey, subtextKey }: PageHeroProps)
       >
         {t(headingKey)}
       </h1>
-      <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-white/50">
+      <p lang={language} className={`${fontClass} mt-3 text-xs font-semibold uppercase tracking-widest text-white/50`}>
         {t(subtitleKey)}
       </p>
       {subtextKey && (

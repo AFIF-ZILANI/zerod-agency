@@ -88,7 +88,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/30">
-          © 2025 {SITE_NAME}. All rights reserved.
+          © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
         </div>
       </div>
     </footer>

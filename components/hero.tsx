@@ -65,7 +65,7 @@ export function Hero() {
             href={WA_GENERAL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-orange px-7 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-[#EA6C0A] hover:shadow-orange/30 hover:shadow-xl"
+            className="inline-flex items-center gap-2 rounded-lg bg-orange px-7 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-orange-hover hover:shadow-orange/30 hover:shadow-xl"
           >
             <MessageCircle className="h-5 w-5" />
             WhatsApp করুন

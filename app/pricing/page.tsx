@@ -72,7 +72,7 @@ export default function PricingPage() {
                     <td className="py-3 pl-3 font-medium text-text-primary rounded-l-lg">{r.label}</td>
                     {[r.starter, r.business, r.custom].map((v, j) => (
                       <td key={j} className="py-3 text-center text-text-primary">
-                        {typeof v === "string" ? v : v}
+                        {v}
                       </td>
                     ))}
                   </tr>

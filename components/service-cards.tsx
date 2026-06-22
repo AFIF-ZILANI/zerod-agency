@@ -29,7 +29,7 @@ export function ServiceCards() {
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="mb-12 text-center text-3xl font-bold text-navy">আমাদের সেবা</h2>
+        <h2 lang="bn" className="font-bengali mb-12 text-center text-3xl font-bold text-navy">আমাদের সেবা</h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           {SERVICES.map((s) => (
             <Link

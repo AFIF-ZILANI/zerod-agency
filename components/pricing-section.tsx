@@ -56,7 +56,7 @@ export function PricingSection() {
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="mb-4 text-center text-3xl font-bold text-navy">প্যাকেজ ও মূল্য</h2>
+        <h2 lang="bn" className="font-bengali mb-4 text-center text-3xl font-bold text-navy">প্যাকেজ ও মূল্য</h2>
         <p className="mb-12 text-center text-text-muted">
           সব প্যাকেজে mobile-responsive design এবং free domain consultation অন্তর্ভুক্ত।
         </p>
@@ -92,7 +92,7 @@ export function PricingSection() {
                 rel="noopener noreferrer"
                 className={`mt-8 flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all ${
                   tier.featured
-                    ? "bg-orange text-white hover:bg-[#EA6C0A]"
+                    ? "bg-orange text-white hover:bg-orange-hover"
                     : "border border-navy text-navy hover:bg-navy hover:text-white"
                 }`}
               >

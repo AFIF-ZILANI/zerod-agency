@@ -1,35 +1,39 @@
+"use client"
 import Link from "next/link"
 import { Globe, RefreshCw, Wrench, ArrowRight } from "lucide-react"
+import { useLanguage } from "@/lib/i18n"
+import { SectionHeading } from "@/components/section-heading"
 
 const SERVICES = [
   {
-    icon:     Globe,
-    titleBn:  "ওয়েবসাইট বানান",
-    titleEn:  "Build a Website",
-    desc:     "আপনার business-এর জন্য professional website — ecommerce থেকে শুরু করে business profile পর্যন্ত।",
-    href:     "/services/website-build",
+    icon:       Globe,
+    titleKey:   "services.build.title",
+    subKey:     "services.build.sub",
+    descKey:    "services.build.desc",
+    href:       "/services/website-build",
   },
   {
-    icon:     RefreshCw,
-    titleBn:  "রিডিজাইন করুন",
-    titleEn:  "Redesign",
-    desc:     "পুরনো website-কে modern, fast, এবং conversion-friendly করে তুলুন।",
-    href:     "/services/redesign",
+    icon:       RefreshCw,
+    titleKey:   "services.redesign.title",
+    subKey:     "services.redesign.sub",
+    descKey:    "services.redesign.desc",
+    href:       "/services/redesign",
   },
   {
-    icon:     Wrench,
-    titleBn:  "রক্ষণাবেক্ষণ",
-    titleEn:  "Maintenance",
-    desc:     "আপনার website সচল, secure, এবং up-to-date রাখার সম্পূর্ণ দায়িত্ব আমাদের।",
-    href:     "/services/maintenance",
+    icon:       Wrench,
+    titleKey:   "services.maint.title",
+    subKey:     "services.maint.sub",
+    descKey:    "services.maint.desc",
+    href:       "/services/maintenance",
   },
 ]
 
 export function ServiceCards() {
+  const { t, fontClass, language } = useLanguage()
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 lang="bn" className="font-bengali mb-12 text-center text-3xl font-bold text-navy">আমাদের সেবা</h2>
+        <SectionHeading textKey="services.heading" className="mb-12" />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           {SERVICES.map((s) => (
             <Link
@@ -41,12 +45,13 @@ export function ServiceCards() {
                 <s.icon className="h-6 w-6 text-orange" />
               </div>
               <div>
-                <p lang="bn" className="font-bengali text-lg font-semibold text-navy">{s.titleBn}</p>
-                <p className="text-xs uppercase tracking-wider text-text-muted">{s.titleEn}</p>
+                <p lang={language} className={`${fontClass} text-lg font-semibold text-navy`}>{t(s.titleKey)}</p>
+                <p className="text-xs uppercase tracking-wider text-text-muted">{t(s.subKey)}</p>
               </div>
-              <p lang="bn" className="font-bengali text-sm leading-relaxed text-text-muted">{s.desc}</p>
+              <p lang={language} className={`${fontClass} text-sm leading-relaxed text-text-muted`}>{t(s.descKey)}</p>
               <span className="mt-auto flex items-center gap-1 text-sm font-medium text-orange group-hover:gap-2 transition-all">
-                আরও জানুন <ArrowRight className="h-4 w-4" />
+                <span lang={language} className={fontClass}>{t("services.read_more")}</span>
+                <ArrowRight className="h-4 w-4" />
               </span>
             </Link>
           ))}

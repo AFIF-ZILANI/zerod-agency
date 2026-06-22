@@ -1,13 +1,16 @@
+"use client"
 import { Check, MessageCircle } from "lucide-react"
 import { WA_GENERAL } from "@/lib/constants"
+import { useLanguage } from "@/lib/i18n"
+import { SectionHeading } from "@/components/section-heading"
 
 const TIERS = [
   {
-    nameEn:   "Starter",
-    nameBn:   "স্টার্টার",
-    price:    "৳15,000 – ৳25,000",
-    tagline:  "শুরু করার জন্য সেরা",
-    features: [
+    nameKey:    "pricing.s.name",
+    taglineKey: "pricing.s.tagline",
+    ctaKey:     "pricing.s.cta",
+    price:      "৳15,000 – ৳25,000",
+    features:   [
       "5 পেজ পর্যন্ত",
       "Contact form",
       "Basic SEO setup",
@@ -16,14 +19,13 @@ const TIERS = [
       "1 মাস support",
     ],
     featured: false,
-    cta:      "শুরু করুন",
   },
   {
-    nameEn:   "Business",
-    nameBn:   "বিজনেস",
-    price:    "৳30,000 – ৳60,000",
-    tagline:  "সবচেয়ে জনপ্রিয়",
-    features: [
+    nameKey:    "pricing.b.name",
+    taglineKey: "pricing.b.tagline",
+    ctaKey:     "pricing.b.cta",
+    price:      "৳30,000 – ৳60,000",
+    features:   [
       "10 পেজ পর্যন্ত",
       "CMS integration",
       "WhatsApp order system",
@@ -32,14 +34,13 @@ const TIERS = [
       "3 মাস support",
     ],
     featured: true,
-    cta:      "আলোচনা করুন",
   },
   {
-    nameEn:   "Custom",
-    nameBn:   "কাস্টম",
-    price:    "৳70,000+",
-    tagline:  "সম্পূর্ণ সমাধান",
-    features: [
+    nameKey:    "pricing.c.name",
+    taglineKey: "pricing.c.tagline",
+    ctaKey:     "pricing.c.cta",
+    price:      "৳70,000+",
+    features:   [
       "Ecommerce + payment",
       "Booking system",
       "Custom features",
@@ -48,22 +49,22 @@ const TIERS = [
       "6 মাস support",
     ],
     featured: false,
-    cta:      "কথা বলুন",
   },
 ]
 
 export function PricingSection() {
+  const { t, fontClass, language } = useLanguage()
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 lang="bn" className="font-bengali mb-4 text-center text-3xl font-bold text-navy">প্যাকেজ ও মূল্য</h2>
-        <p className="mb-12 text-center text-text-muted">
-          সব প্যাকেজে mobile-responsive design এবং free domain consultation অন্তর্ভুক্ত।
+        <SectionHeading textKey="pricing.heading" className="mb-4" />
+        <p lang={language} className={`${fontClass} mb-12 text-center text-text-muted`}>
+          {t("pricing.subtitle")}
         </p>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           {TIERS.map((tier) => (
             <div
-              key={tier.nameEn}
+              key={tier.nameKey}
               className={`relative flex flex-col rounded-xl border p-7 ${
                 tier.featured
                   ? "border-2 border-orange shadow-xl shadow-orange/10"
@@ -72,11 +73,11 @@ export function PricingSection() {
             >
               {tier.featured && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-orange px-4 py-1 text-xs font-bold text-white">
-                  সবচেয়ে জনপ্রিয়
+                  <span lang={language} className={fontClass}>{t("pricing.popular")}</span>
                 </div>
               )}
-              <p lang="bn" className="font-bengali text-lg font-bold text-navy">{tier.nameBn}</p>
-              <p lang="bn" className="font-bengali mt-0.5 text-xs text-text-muted">{tier.tagline}</p>
+              <p lang={language} className={`${fontClass} text-lg font-bold text-navy`}>{t(tier.nameKey)}</p>
+              <p lang={language} className={`${fontClass} mt-0.5 text-xs text-text-muted`}>{t(tier.taglineKey)}</p>
               <p className="mt-4 text-2xl font-bold text-navy">{tier.price}</p>
               <ul className="mt-6 flex flex-col gap-2.5">
                 {tier.features.map((f) => (
@@ -97,7 +98,7 @@ export function PricingSection() {
                 }`}
               >
                 <MessageCircle className="h-4 w-4" />
-                <span lang="bn" className="font-bengali">{tier.cta}</span>
+                <span lang={language} className={fontClass}>{t(tier.ctaKey)}</span>
               </a>
             </div>
           ))}
